@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alert Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByDZbFv-rydXWpAazEnE5KA-qNaN52kIU" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Disaster Alert Dashboard</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search by region...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard-grid">
+                <section class="alerts-panel">
+                    <h2>Live Alerts</h2>
+                    <div class="alert-filters">
+                        <button class="filter-btn active" data-magnitude="all">All</button>
+                        <button class="filter-btn" data-magnitude="significant">Significant</button>
+                        <button class="filter-btn" data-magnitude="4.5">Magnitude 4.5+</button>
+                    </div>
+                    <div id="alertsList" class="alerts-list"></div>
+                </section>
+
+                <section class="map-panel">
+                    <div id="map"></div>
+                    <div class="help-centers">
+                        <h3>Nearby Help Centers</h3>
+                        <div id="helpCentersList"></div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="stats-panel">
+                <div class="stat-card">
+                    <h3>Total Active Alerts</h3>
+                    <p id="totalAlerts">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Recent Events (24h)</h3>
+                    <p id="recentEvents">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Help Centers Available</h3>
+                    <p id="helpCentersCount">0</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
